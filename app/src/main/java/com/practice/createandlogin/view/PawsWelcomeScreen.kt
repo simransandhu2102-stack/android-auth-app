@@ -1,10 +1,5 @@
-package com.practice.createandlogin.login
+package com.practice.createandlogin.view
 
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.SystemBarStyle
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -16,7 +11,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -29,30 +26,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.practice.createandlogin.R
-import com.practice.createandlogin.ui.theme.CreateAndLoginTheme
+import com.practice.createandlogin.ui.theme.BaseTheme
 import com.practice.createandlogin.ui.theme.Typography
 import com.practice.createandlogin.ui.theme.grey_bg
 
-class LoginActivity : ComponentActivity() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge(
-            statusBarStyle = SystemBarStyle.auto(
-                lightScrim = android.graphics.Color.TRANSPARENT,
-                darkScrim = android.graphics.Color.TRANSPARENT
-            )
-        )
-        setContent {
-            CreateAndLoginTheme(dynamicColor = false) {
-                CreateLoginUI()
-            }
-        }
-    }
-}
-
 @Composable
-fun CreateLoginUI() {
+fun WelcomeScreen(onNavigateToLogin: () -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -60,10 +39,7 @@ fun CreateLoginUI() {
             .statusBarsPadding()
             .background(grey_bg)
     ) {
-        ImageNextToText(
-            img = R.drawable.pet_splash_top_paws_img,
-            str = stringResource(R.string.happy_pet)
-        )
+        ImageNextToText()
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -87,9 +63,10 @@ fun CreateLoginUI() {
                     .padding(12.dp)
             )
             Button(
-                modifier = Modifier
-                    .fillMaxWidth(),
-                onClick = {}
+                modifier = Modifier.fillMaxWidth(),
+                shape = RoundedCornerShape(16.dp),
+                elevation = ButtonDefaults.buttonElevation(defaultElevation = 8.dp),
+                onClick = { onNavigateToLogin() }
             ) {
                 Text(
                     style = Typography.bodyLarge,
@@ -103,19 +80,21 @@ fun CreateLoginUI() {
 }
 
 @Composable
-fun ImageNextToText(img: Int, str: String) {
+fun ImageNextToText() {
     Row(
-        horizontalArrangement = Arrangement.Center,
+        modifier = Modifier.fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically
     ) {
+        Spacer(modifier = Modifier.padding(5.dp))
         Image(
-            painter = painterResource(img),
-            contentDescription = "splash screen image"
+            painter = painterResource(R.drawable.pet_splash_top_paws_img),
+            contentDescription = "splash screen image",
+            modifier = Modifier.size(30.dp)
         )
-        Spacer(modifier = Modifier.padding(2.dp))
+        Spacer(modifier = Modifier.padding(5.dp))
         Text(
             style = Typography.bodyLarge,
-            text = str,
+            text = stringResource(R.string.happy_pet),
             fontWeight = FontWeight.Bold
         )
     }
@@ -123,8 +102,10 @@ fun ImageNextToText(img: Int, str: String) {
 
 @Preview(showSystemUi = true)
 @Composable
-fun PreviewCreateLoginUI() {
-    CreateAndLoginTheme(dynamicColor = false) {
-        CreateLoginUI()
+fun PreviewWelcomeScreen() {
+    BaseTheme(dynamicColor = false) {
+        WelcomeScreen(
+            onNavigateToLogin = {}
+        )
     }
 }

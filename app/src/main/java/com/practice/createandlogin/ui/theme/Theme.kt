@@ -13,14 +13,14 @@ import androidx.compose.ui.platform.LocalContext
 
 private val DarkColorScheme = darkColorScheme(
     primary = Orange,
-    secondary = Color.Black,
-    tertiary = Color.Black
+    secondary = Color.White,
+    tertiary = Color.White
 )
 
 private val LightColorScheme = lightColorScheme(
     primary = Orange,
-    secondary = Color.Black,
-    tertiary = Color.Black
+    secondary = Color.White,
+    tertiary = Color.White
 
     /* Other default colors to override
     background = Color(0xFFFFFBFE),
@@ -34,7 +34,7 @@ private val LightColorScheme = lightColorScheme(
 )
 
 @Composable
-fun CreateAndLoginTheme(
+fun BaseTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,

@@ -1,6 +1,9 @@
 <resources>
-    <string name="app_name">CreateAndLogin</string>
+    <string name="app_name">Happy Pets</string>
     <string name="happy_pet">Happy Pet</string>
     <string name="get_started_by_finding_the_perfect_companion_for_your_family">Get started by finding the perfect companion for your family!</string>
     <string name="welcome">Welcome</string>
+    <string name="discover_a_world_and_complaint_at_happy_pet">Discover a world of possibilities and complaint at Happy Pet</string>
+    <string name="login">LOGIN</string>
+    <string name="signup">SIGNUP</string>
 </resources>
