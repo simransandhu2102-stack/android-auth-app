@@ -5,13 +5,13 @@ plugins {
 }
 
 android {
-    namespace = "com.practice.createandlogin"
+    namespace = "com.practice.happypets"
     compileSdk {
         version = release(37)
     }
 
     defaultConfig {
-        applicationId = "com.practice.createandlogin"
+        applicationId = "com.practice.happypets"
         minSdk = 24
         targetSdk = 37
         versionCode = 1

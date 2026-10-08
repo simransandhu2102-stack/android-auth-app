@@ -22,5 +22,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "CreateAndLogin"
+rootProject.name = "HappyPaws"
 include(":app")

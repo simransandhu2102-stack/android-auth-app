@@ -6,15 +6,15 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/pet_splash_top_paws_img"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/pet_splash_top_paws_img"
         android:supportsRtl="true"
-        android:theme="@style/Theme.CreateAndLogin">
+        android:theme="@style/Theme.HappyPaws">
         <activity
-            android:name=".MainActivity"
+            android:name="com.practice.happypets.MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.CreateAndLogin"
+            android:theme="@style/Theme.HappyPaws"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

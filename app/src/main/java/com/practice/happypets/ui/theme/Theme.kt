@@ -1,4 +1,4 @@
-package com.practice.createandlogin.ui.theme
+package com.practice.happypets.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme

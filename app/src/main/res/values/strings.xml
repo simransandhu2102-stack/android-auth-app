@@ -6,4 +6,9 @@
     <string name="discover_a_world_and_complaint_at_happy_pet">Discover a world of possibilities and complaint at Happy Pet</string>
     <string name="login">LOGIN</string>
     <string name="signup">SIGNUP</string>
+    <string name="login_title">Login</string>
+    <string name="please_sign_in_to_continue">Please sign in to continue.</string>
+    <string name="email_placeholder">EMAIL</string>
+    <string name="password_placeholder">PASSWORD</string>
+    <string name="forget">FORGET</string>
 </resources>

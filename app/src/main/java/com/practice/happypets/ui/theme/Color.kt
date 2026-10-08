@@ -1,4 +1,4 @@
-package com.practice.createandlogin.ui.theme
+package com.practice.happypets.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
